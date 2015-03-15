@@ -1,0 +1,48 @@
+<ion-view view-title="Browse">
+  <ion-content>
+    <h1>Browse</h1>
+
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2"><a id="callApi" href="#">Who am I?</a></div>
+    </div>
+    <div class="row" id="signInFormWrapper">
+        <div class="col-md-4">
+            <form id="signInForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="username">User name</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="username" name="username" type="text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="password" name="password" type="password" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="submit" value="Sign in" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul id="messages"></ul>
+        </div>
+    </div>
+    <div class="row" id="newMessageContainer" style="display: none">
+        <div class="col-md-12">
+            <input id="newMessage" type="text" />
+        </div>
+    </div>
+    
+  </ion-content>
+</ion-view>
