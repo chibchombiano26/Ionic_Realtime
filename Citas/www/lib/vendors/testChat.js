@@ -42,25 +42,6 @@ var ChatHubWrapper = function () {
         var chatHub = new ChatHubWrapper();
         // clear token cookie when page reloads
         chatHub.clearAuthentication();
-        
-        function signIn(userName, password) {
-            return $.post("http://hefesoftrealtime.azurewebsites.net/token", { grant_type: "password", username: userName, password: password })
-                .done(function (data) {
-                    if (data && data.access_token) {
-                        chatHub.useBearerToken(data.access_token);
-                        bearerToken = data.access_token;
-                        chatHub.inicializarProxy("broadcastMessage");
-                        console.log("Login successful");
-                    }
-                })
-                .fail(function (xhr) {
-                    if (xhr.status == 400) {
-                        console.log("Invalid user name or password");
-                    } else {
-                        console.log("Unexpected error while signing in");
-                    }
-                });
-        }
 
         // example of WebAPI call using bearer token
         var bearerToken = null;
