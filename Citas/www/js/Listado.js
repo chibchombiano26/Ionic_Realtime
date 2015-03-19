@@ -1,7 +1,18 @@
 angular.module('starter.controllers.listado', ['ionic'])
 
-.controller('ListadoCtrl', ['$scope', 'signalrService','$rootScope', function ($scope, $signalrService, $rootScope) {
-	$scope.playlists = [
+.controller('ListadoCtrl', ['$scope', 'signalrService','$rootScope','$ionicLoading', function ($scope, $signalrService, $rootScope, $ionicLoading) {
+	
+
+ $ionicLoading.show({
+    template: '<ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner>',
+    animation: 'fade-in',
+    showBackdrop: false,
+    maxWidth: 200,
+    showDelay: 0
+  });
+
+
+  $scope.playlists = [
     { title: 'Jose', id: 1 },
     { title: 'Douglas', id: 2 }    
   ];
@@ -12,6 +23,7 @@ angular.module('starter.controllers.listado', ['ionic'])
   
   function resultado(data){
   	//alert(data.access_token);
+    $ionicLoading.hide();
   	$signalrService.sendMessage("Prueba douglas");
   };
 

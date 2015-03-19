@@ -1,1 +1,8 @@
-/* Empty. Add your own CSS if you like */
+.loading-container .loading {
+	background-color: transparent;
+}
+
+.spinner svg {
+  width: 25% !important;
+  height: 100px !important;
+}
