@@ -8,8 +8,7 @@ angular.module('starter',
     [
       'ionic', 
       'ngCordova',
-      'starter.controllers',
-      'starter.controllers.listado',      
+      'starter.controllers',     
       'starter.services'
       ])
 
@@ -68,7 +67,7 @@ angular.module('starter',
       views: {
         'menuContent': {
           templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          controller: 'listadoCtrl'
         }
       }
     })
