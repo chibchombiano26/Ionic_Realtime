@@ -1,5 +1,8 @@
-angular.module('starter.controllers.hefesoft', [])
-.controller('signUpCtrl', ['$scope','$http','$cordovaToast', function($scope, $http, $cordovaToast){
+
+(function(){
+'use strict';
+
+angular.module('starter').controller('signUpCtrl', ['$scope','$http','$cordovaToast', function($scope, $http, $cordovaToast){
 	
 $scope.loginData = {username: '', password: '', email:''};
 
@@ -27,3 +30,6 @@ $scope.loginData = {username: '', password: '', email:''};
   };
 
 }])
+
+
+})();
