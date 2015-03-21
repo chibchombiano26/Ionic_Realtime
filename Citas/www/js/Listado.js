@@ -1,6 +1,5 @@
-angular.module('starter.controllers.listado', ['ionic'])
-
-.controller('ListadoCtrl', ['$scope', 'signalrService','$rootScope','$ionicLoading', function ($scope, $signalrService, $rootScope, $ionicLoading) {
+angular.module('starter.controllers', [])
+.controller('listadoCtrl', ['$scope', 'signalrService','$rootScope','$ionicLoading', function ($scope, $signalrService, $rootScope, $ionicLoading) {
 	
 
  $ionicLoading.show({

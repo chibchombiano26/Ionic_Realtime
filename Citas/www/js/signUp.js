@@ -1,5 +1,4 @@
-angular.module('starter.controllers.listado', ['ionic'])
-
+angular.module('starter.controllers.hefesoft', [])
 .controller('signUpCtrl', ['$scope','$http','$cordovaToast', function($scope, $http, $cordovaToast){
 	
 $scope.loginData = {username: '', password: '', email:''};
