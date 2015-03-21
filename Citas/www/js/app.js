@@ -9,8 +9,7 @@ angular.module('starter',
       'ionic', 
       'ngCordova',
       'starter.controllers',
-      'starter.controllers.listado',
-      'starter.controllers.hefesoft',
+      'starter.controllers.listado',      
       'starter.services'
       ])
 

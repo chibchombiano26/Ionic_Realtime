@@ -44,5 +44,8 @@ angular.module('starter.controllers', [])
   ];
 })
 
+.controller('signUpCtrl', function(){
+})
+
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
