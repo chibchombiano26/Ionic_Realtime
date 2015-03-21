@@ -10,6 +10,7 @@ angular.module('starter',
       'ngCordova',
       'starter.controllers',
       'starter.controllers.listado',
+      'starter.controllers.hefesoft',
       'starter.services'
       ])
 
@@ -68,7 +69,7 @@ angular.module('starter',
       views: {
         'menuContent': {
           templateUrl: "templates/playlists.html",
-          controller: 'ListadoCtrl'
+          controller: 'PlaylistsCtrl'
         }
       }
     })

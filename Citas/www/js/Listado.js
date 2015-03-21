@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers.listado', [])
 .controller('listadoCtrl', ['$scope', 'signalrService','$rootScope','$ionicLoading', function ($scope, $signalrService, $rootScope, $ionicLoading) {
 	
 
