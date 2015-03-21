@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 var myapp =angular.module('starter.controller',[]);
 
 myapp.controller('signUpCtrl', ['$scope','$http','$cordovaToast', function($scope, $http, $cordovaToast){
   
+=======
+angular.module('starter')
+.controller('signUpCtrl', ['$scope','$http','$cordovaToast', function($scope, $http, $cordovaToast){
+	
+>>>>>>> origin/master
 $scope.loginData = {username: '', password: '', email:''};
 
  $scope.register = function() {     
