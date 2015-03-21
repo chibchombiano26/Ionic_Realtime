@@ -1,5 +1,9 @@
+body {
+  -ms-content-zooming: none;
+}
+
 .loading-container .loading {
-	background-color: transparent;
+	background-color: transparent;	
 }
 
 .spinner svg {

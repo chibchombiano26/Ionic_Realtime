@@ -6,7 +6,9 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', 
     [
-      'ionic', 'starter.controllers',
+      'ionic', 
+      'ngCordova',
+      'starter.controllers',
       'starter.controllers.listado',
       'starter.services'
       ])
@@ -33,6 +35,15 @@ angular.module('starter',
     abstract: true,
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
+  })
+
+.state('app.signUp', {
+    url: "/signUp",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/signUp.html"        
+      }
+    }
   })
 
   .state('app.search', {
