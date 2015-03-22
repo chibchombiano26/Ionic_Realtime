@@ -2,15 +2,6 @@ angular.module('starter')
 .controller('listadoCtrl', ['$scope', 'signalrService','$rootScope','$ionicLoading', function ($scope, $signalrService, $rootScope, $ionicLoading) {
 	
 
- $ionicLoading.show({
-    template: '<ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner>',
-    animation: 'fade-in',
-    showBackdrop: false,
-    maxWidth: 200,
-    showDelay: 0
-  });
-
-
   $scope.playlists = [
     { title: 'Jose', id: 1 },
     { title: 'Douglas', id: 2 }    

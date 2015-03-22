@@ -1,5 +1,4 @@
-var app = angular.module('starter.services', []);
-
+var app = angular.module('starter');
 app.service('signalrService', ['$rootScope','$q',function ($rootScope, q) {
 	
 	var username;

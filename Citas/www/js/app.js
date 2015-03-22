@@ -8,13 +8,7 @@ angular.module('starter',
     [
       'ionic', 
       'ngCordova',
-<<<<<<< HEAD
-      'starter.controllers',
-      'starter.controllers.listado',      
-=======
-      'starter.controllers',     
->>>>>>> origin/master
-      'starter.services'
+      'starter.controllers'      
       ])
 
 .run(function($ionicPlatform) {
