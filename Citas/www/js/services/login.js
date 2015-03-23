@@ -13,7 +13,19 @@ this.login  = function (userName, password) {
                         deferred.resolve(result);
                         chatHub.useBearerToken(data.access_token);
                         bearerToken = data.access_token;
-                        console.log("Login successful");                        
+                        globalService.setToken(data.access_token);
+                        console.log("Login successful");        
+
+
+                        $http({
+                                method: 'POST',
+                                url: globalService.url() +  '/api/SignUp',
+                                headers: globalService.getHeaders(),
+                                data: {userName : 'jose123', password : 'clave123456'}
+                            });
+
+
+                        
                     }
                 })
                 .fail(function (xhr) {
