@@ -5,7 +5,7 @@ this.signUp  = function(data) {
       //var datos = $scope.loginData;
 
       var deferred = q.defer();
-      $http.post('http://localhost:7594/api/SignUp', data).
+      $http.post( globalService.url() + '/api/SignUp', data).
       success(function(data, status, headers, config) {       
           //error
           if(data.Errors.length > 0){

@@ -1,38 +1,31 @@
 var app = angular.module('starter');
-app.service('signalrService', ['$rootScope','$q',function ($rootScope, q) {
+app.service('signalrService', ['$rootScope','$q', 'loginService', 'globalService',function ($rootScope, q, loginService, globalService) {
 	
 	var username;
 	var self = this;
 	var deferred = q.defer();
 
 	this.login  = function (userName, password) {
-		username = userName; 
-		
-            $.post("http://hefesoftrealtime.azurewebsites.net/token", { grant_type: "password", username: userName, password: password })
-                .done(function (data) {
-                    if (data && data.access_token) {
-                        chatHub.useBearerToken(data.access_token);
-                        bearerToken = data.access_token;
-                        self.inicializarProxy("broadcastMessage");
-                        console.log("Login successful");                        
-                    }
-                })
-                .fail(function (xhr) {
-                    if (xhr.status == 400) {
-                        console.log("Invalid user name or password");
-                        deferred.reject("Invalid user name or password");
-                    } else {
-                        console.log("Unexpected error while signing in");
-                    }
-                });
+        loginService.login(userName, password).then(success, error);
+        return deferred.promise;
+    };
 
-                return deferred.promise;
-        };
+
+    function success(data){
+        username = data.userName;
+        chatHub.useBearerToken(data.data.access_token);
+        bearerToken = data.data.access_token;
+        self.inicializarProxy("broadcastMessage");
+    }
+
+    function error(msg){
+        deferred.reject(msg);
+    }
 
     this.inicializarProxy = function(nombreMetodoOir){    			
                 $.connection.hub.logging = true;               
                 //La url a la que nos deseamos conectar
-                var connection = $.hubConnection("http://hefesoftrealtime.azurewebsites.net/");
+                var connection = $.hubConnection(globalService.url());
 
                 connection.error(function (error) {
                         console.log('SignalR error: ' + error)
@@ -47,16 +40,19 @@ app.service('signalrService', ['$rootScope','$q',function ($rootScope, q) {
 
             });
 
+
+            //connection.qs = { Bearer: bearerToken};
                 //Para que acepte cross domain
-            connection.start({jsonp : true}).done(function(){            	               
+            connection.start({jsonp : true}).done(function(){ 
                 console.log("Proxy inicializado");
                 deferred.resolve('Proxy inicializado');     
-            });
+            }
+            );
     };
 
 
-    this.sendMessage = function(data){
-    	proxy.invoke('send', username, data);
+    this.sendMessage = function(data){       
+    	proxy.invoke('SendMessage', data);
     };
 
 }])
