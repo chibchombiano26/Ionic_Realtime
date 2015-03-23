@@ -41,8 +41,7 @@ app.service('signalrService', ['$rootScope','$q', 'loginService', 'globalService
             });
 
 
-            //connection.qs = { Bearer: bearerToken};
-                //Para que acepte cross domain
+            connection.qs = { bearer_token: bearerToken};               
             connection.start({jsonp : true}).done(function(){ 
                 console.log("Proxy inicializado");
                 deferred.resolve('Proxy inicializado');     
